@@ -7,6 +7,29 @@ import SEO from "../components/seo"
 import Card from "../components/Card/Card"
 import Section from "../components/Section/Section"
 import Wave from "../components/Wave/Wave"
+import staticData from "../../static.json"
+import Cell from "../components/Cell/Cell"
+import styled from "styled-components"
+
+const SectionCaption = styled.p`
+  font-weight: 60;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #94A4BA;
+  text-align: center;
+`
+const SectionCellGroup = styled.div`
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+
+  @media (max-width: 800px){
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
 
 const IndexPage = () => (
     <Layout>
@@ -58,6 +81,15 @@ const IndexPage = () => (
       title = "React for Designers"
       text = "Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay. Contented consisted continual curiosity contained get sex. Forth child dried in in aware do. You had met they song how feel lain evil near. Small she avoid six yet table china. And bed make say been then dine mrs. To household rapturous fulfilled attempted on so. "
     />
+    <SectionCaption> 12 Sections in 6 Sections</SectionCaption>
+    <SectionCellGroup>
+    {staticData.cells.map(cell => (
+        <Cell
+        title = {cell.title}
+        image = {cell.image}
+        />
+    ))}
+    </SectionCellGroup>
     </Layout>
 )
 
