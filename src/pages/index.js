@@ -46,7 +46,8 @@ const IndexPage = () => (
           <img src={require('../images/logo-studio.png')} width="50" />
         </div>
         <br/>
-        <Link to="/page-2/">Watch the video</Link>
+        {/* <Link to="/page-2/">Watch the video</Link> */}
+        <Link to="/">Watch the video</Link>
         <Wave />
       </div>
     </div>
